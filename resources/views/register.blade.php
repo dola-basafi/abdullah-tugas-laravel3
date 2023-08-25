@@ -3,8 +3,9 @@
 @section('content')
 
 
+<h1 class="mt-3">REGISTER</h1>
 
-<form method="POST" action="{{route('register_form')}}" >
+<form method="POST" action="{{route('register_form')}}" class="container mt-5" >
   @csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>

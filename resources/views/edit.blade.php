@@ -5,7 +5,7 @@
         {{ $message }}
     @enderror
     
-    <form action="{{ route('editForm', ['id' => $product->id]) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('editForm', ['id' => $product->id]) }}" method="POST" enctype="multipart/form-data" class="container mt-5">
         @csrf
         @method('PUT')
         <div class="mb-3">

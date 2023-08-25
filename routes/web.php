@@ -17,7 +17,7 @@ Route::any('/login', [AuthController::class, 'login'])
 
 Route::get('/register', function () {
     return view('register');
-})->name('register_form');
+})->name('register_form')->middleware(["noAuth"]);
 
 Route::post('/register', [PenggunaController::class, 'register']);
 
@@ -35,6 +35,6 @@ Route::prefix('produk')->group(function () {
         Route::post('/create', [ProdukController::class, 'store'])->name('produk.create');
         Route::get('/edit/{id}', [ProdukController::class, 'edit'])->name('editForm');
         Route::put('/edit/{id}', [ProdukController::class, 'update'])->name('edit');
-        Route::delete('/delete/{id}',[ProdukController::class,'delete'])->name('delete');
+        Route::delete('/delete/{id}',[ProdukController::class,'destroy'])->name('delete');
     });
 });

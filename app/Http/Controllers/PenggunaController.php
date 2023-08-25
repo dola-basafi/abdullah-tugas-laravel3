@@ -23,6 +23,6 @@ class PenggunaController extends Controller
         $pengguna->email = $request->email;
         $pengguna->password = $request->password;
         $pengguna->save();
-        return redirect()->route('produk.index');
+        return redirect()->route('login');
     }
 }
